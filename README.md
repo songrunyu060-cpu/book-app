@@ -9,7 +9,7 @@
 ### 用户端
 登录：/user/login
 注册：/user/register
-首页：/user/home
+首页：/user/dashboard
 图书列表：/user/books
 图书详情：/user/books/[id]
 收藏：/user/collect
@@ -18,7 +18,7 @@
 设置：/user/setting
 ### 管理员后台
 管理员登录：/admin/login
-数据看板：/admin/dashboard
+数据看板：/admin/dataview
 用户管理：/admin/user
 图书管理：/admin/book
 分类管理：/admin/category
