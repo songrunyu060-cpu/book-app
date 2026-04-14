@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Book Search App
 
-## Getting Started
+## 项目简介
 
-First, run the development server:
+这是一个基于 Next.js 的图书搜索应用。
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 路由设计
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 用户端
+登录：/user/login
+注册：/user/register
+首页：/user/home
+图书列表：/user/books
+图书详情：/user/books/[id]
+收藏：/user/collect
+借阅记录：/user/borrow
+通知：/user/notice
+设置：/user/setting
+### 管理员后台
+管理员登录：/admin/login
+数据看板：/admin/dashboard
+用户管理：/admin/user
+图书管理：/admin/book
+分类管理：/admin/category
+借阅记录：/admin/borrow
+书评审核：/admin/review
+轮播图：/admin/banner
+推荐管理：/admin/recommend
+公告管理：/admin/notice
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
