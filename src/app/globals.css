@@ -1,2 +1,167 @@
 @import "tailwindcss";
 
+/* Theme tokens: light/dark via CSS variables.
+   - Default follows system preference.
+   - Manual override: html[data-theme="light"|"dark"]
+
+   Naming:
+   - bg: page background
+   - surface: panels / nav / tables
+   - elevated: modals / popovers
+   - text: primary text
+   - muted: secondary text
+   - border: subtle borders/dividers
+   - primary/accent: brand + highlight
+*/
+
+:root {
+  color-scheme: light;
+
+  /* Light theme: warm paper + ink + cobalt */
+  --bg: 252 250 246; /* paper */
+  --surface: 255 255 255;
+  --elevated: 255 255 255;
+
+  --text: 17 24 39; /* slate-900 */
+  --muted: 71 85 105; /* slate-600 */
+  --border: 226 232 240; /* slate-200 */
+
+  --primary: 37 99 235; /* cobalt */
+  --primary-fg: 255 255 255;
+
+  --accent: 217 70 239; /* fuchsia */
+  --accent-fg: 255 255 255;
+
+  --success: 5 150 105; /* emerald */
+  --success-fg: 255 255 255;
+  --warning: 245 158 11; /* amber */
+  --warning-fg: 17 24 39;
+  --danger: 220 38 38; /* red */
+  --danger-fg: 255 255 255;
+
+  --ring: 59 130 246;
+
+  --shadow-color: 15 23 42; /* slate-900 */
+  --shadow-sm: 0 1px 2px rgb(var(--shadow-color) / 0.06);
+  --shadow-md: 0 12px 28px rgb(var(--shadow-color) / 0.10);
+
+  --radius: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+
+    /* Dark theme: deep graphite + soft text + neon accents */
+    --bg: 10 11 16;
+    --surface: 15 16 24;
+    --elevated: 20 22 32;
+
+    --text: 228 231 239;
+    --muted: 148 163 184;
+    --border: 35 39 55;
+
+    --primary: 96 165 250; /* sky */
+    --primary-fg: 3 7 18;
+
+    --accent: 251 113 133; /* rose */
+    --accent-fg: 3 7 18;
+
+    --success: 52 211 153;
+    --success-fg: 3 7 18;
+    --warning: 251 191 36;
+    --warning-fg: 3 7 18;
+    --danger: 248 113 113;
+    --danger-fg: 3 7 18;
+
+    --ring: 96 165 250;
+
+    --shadow-color: 0 0 0;
+    --shadow-sm: 0 1px 2px rgb(var(--shadow-color) / 0.35);
+    --shadow-md: 0 18px 44px rgb(var(--shadow-color) / 0.55);
+
+    --radius: 14px;
+  }
+}
+
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: 252 250 246;
+  --surface: 255 255 255;
+  --elevated: 255 255 255;
+
+  --text: 17 24 39;
+  --muted: 71 85 105;
+  --border: 226 232 240;
+
+  --primary: 37 99 235;
+  --primary-fg: 255 255 255;
+
+  --accent: 217 70 239;
+  --accent-fg: 255 255 255;
+
+  --success: 5 150 105;
+  --success-fg: 255 255 255;
+  --warning: 245 158 11;
+  --warning-fg: 17 24 39;
+  --danger: 220 38 38;
+  --danger-fg: 255 255 255;
+
+  --ring: 59 130 246;
+
+  --shadow-color: 15 23 42;
+  --shadow-sm: 0 1px 2px rgb(var(--shadow-color) / 0.06);
+  --shadow-md: 0 12px 28px rgb(var(--shadow-color) / 0.10);
+
+  --radius: 14px;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: 10 11 16;
+  --surface: 15 16 24;
+  --elevated: 20 22 32;
+
+  --text: 228 231 239;
+  --muted: 148 163 184;
+  --border: 35 39 55;
+
+  --primary: 96 165 250;
+  --primary-fg: 3 7 18;
+
+  --accent: 251 113 133;
+  --accent-fg: 3 7 18;
+
+  --success: 52 211 153;
+  --success-fg: 3 7 18;
+  --warning: 251 191 36;
+  --warning-fg: 3 7 18;
+  --danger: 248 113 113;
+  --danger-fg: 3 7 18;
+
+  --ring: 96 165 250;
+
+  --shadow-color: 0 0 0;
+  --shadow-sm: 0 1px 2px rgb(var(--shadow-color) / 0.35);
+  --shadow-md: 0 18px 44px rgb(var(--shadow-color) / 0.55);
+
+  --radius: 14px;
+}
+
+/* Base element styles consuming tokens */
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: rgb(var(--bg));
+  color: rgb(var(--text));
+}
+
+::selection {
+  background: rgb(var(--primary) / 0.22);
+}
+
