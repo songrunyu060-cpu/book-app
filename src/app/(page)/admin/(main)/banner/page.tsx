@@ -1,4 +1,3 @@
 export default function AdminBanner() {
-  return <div>Admin Banner</div>;
+  return <div>Admin Banner</div>
 }
-

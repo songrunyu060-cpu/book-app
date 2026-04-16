@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 // 登录页（只保留核心内容）
 export default function LoginPage() {
   return (
@@ -16,10 +14,14 @@ export default function LoginPage() {
       {/* 表单 */}
       <form className="relative space-y-5">
         <div>
-          <label className="block text-white/85 text-sm mb-1 ml-0.5">
+          <label
+            className="block text-white/85 text-sm mb-1 ml-0.5"
+            htmlFor="login-account"
+          >
             账号
           </label>
           <input
+            id="login-account"
             type="text"
             placeholder="请输入您的账号"
             className="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder:text-white/45 ring-1 ring-white/20 focus:outline-none focus:ring-2 focus:ring-white/35"
@@ -27,10 +29,14 @@ export default function LoginPage() {
         </div>
 
         <div>
-          <label className="block text-white/85 text-sm mb-1 ml-0.5">
+          <label
+            className="block text-white/85 text-sm mb-1 ml-0.5"
+            htmlFor="login-password"
+          >
             密码
           </label>
           <input
+            id="login-password"
             type="password"
             placeholder="请输入密码"
             className="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder:text-white/45 ring-1 ring-white/20 focus:outline-none focus:ring-2 focus:ring-white/35"
@@ -45,5 +51,5 @@ export default function LoginPage() {
         </button>
       </form>
     </div>
-  );
+  )
 }

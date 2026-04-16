@@ -1,3 +1,3 @@
 export default function Books() {
-  return <div>Books</div>;
+  return <div>Books</div>
 }

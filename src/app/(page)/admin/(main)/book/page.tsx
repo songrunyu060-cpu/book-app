@@ -1,4 +1,3 @@
 export default function AdminBook() {
-  return <div>Admin Book</div>;
+  return <div>Admin Book</div>
 }
-

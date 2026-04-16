@@ -1,2 +1,1 @@
-export * from "./env-check";
-
+export * from "./env-check"

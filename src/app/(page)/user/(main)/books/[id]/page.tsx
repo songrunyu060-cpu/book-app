@@ -1,4 +1,3 @@
 export default function BookDetail() {
-  return <div>Book Detail</div>;
+  return <div>Book Detail</div>
 }
-

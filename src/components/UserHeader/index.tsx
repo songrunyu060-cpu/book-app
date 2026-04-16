@@ -1,12 +1,17 @@
-import Link from "next/link";
-import Image from "next/image";
-import logoFontImage from "@/src/public/image/logoFontImage.png";
+import Image from "next/image"
+import Link from "next/link"
+import logoFontImage from "@/src/public/image/logoFontImage.png"
 
 export default function UserHeader() {
   return (
     <div className="h-[80px] fixed top-0 left-0 w-full z-10 bg-transparent backdrop-blur-sm flex items-center pr-60">
       <div className="flex items-center pl-70">
-        <Image src={logoFontImage} alt="logo" width={150} height={110} />
+        <Image
+          src={logoFontImage}
+          alt="logo"
+          width={150}
+          height={110}
+        />
       </div>
       <div className="flex items-center gap-4 text-white/90 mt-[4px] ml-auto">
         <div className="flex items-center gap-6">
@@ -24,5 +29,5 @@ export default function UserHeader() {
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import Link from "next/link"
 
 // 纯服务端组件，无客户端代码
 export default function NotFound() {
@@ -40,8 +40,10 @@ export default function NotFound() {
           </div>
         </div>
 
-        <p className="text-sm text-gray-400 mt-6">抱歉，无法找到该页面</p>
+        <p className="text-sm text-gray-400 mt-6">
+          抱歉，无法找到该页面
+        </p>
       </div>
     </div>
-  );
+  )
 }

@@ -1,4 +1,3 @@
 export default function Collect() {
-  return <div>Collect</div>;
+  return <div>Collect</div>
 }
-

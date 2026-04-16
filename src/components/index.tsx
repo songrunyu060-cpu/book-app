@@ -1,3 +1,3 @@
-import UserHeader from "./UserHeader";
+import UserHeader from "./UserHeader"
 
-export { UserHeader };
+export { UserHeader }

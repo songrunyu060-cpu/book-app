@@ -1,9 +1,9 @@
-import { UserHeader } from "@/src/components";
+import { UserHeader } from "@/components"
 
 export default function AuthLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) {
   return (
     <div className="h-full w-full absolute overflow-hidden">
@@ -22,5 +22,5 @@ export default function AuthLayout({
         <div className="w-full max-w-md">{children}</div>
       </div>
     </div>
-  );
+  )
 }
