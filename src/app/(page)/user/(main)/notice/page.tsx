@@ -1,3 +1,4 @@
+// 通知页
 export default function Notice() {
   return <div>Notice</div>
 }

@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button"
+
 // 登录页（只保留核心内容）
 export default function LoginPage() {
   return (
@@ -28,7 +30,7 @@ export default function LoginPage() {
           />
         </div>
 
-        <div>
+        <div className="mb-10">
           <label
             className="block text-white/85 text-sm mb-1 ml-0.5"
             htmlFor="login-password"
@@ -42,13 +44,15 @@ export default function LoginPage() {
             className="w-full px-4 py-3 rounded-xl bg-white/10 text-white placeholder:text-white/45 ring-1 ring-white/20 focus:outline-none focus:ring-2 focus:ring-white/35"
           />
         </div>
-
-        <button
-          type="submit"
-          className="w-full py-3 rounded-xl font-medium text-slate-950 bg-white hover:bg-white/90 active:bg-white/80 transition"
-        >
-          登 录 / 注 册
-        </button>
+        <div className="flex justify-center">
+          <Button
+            variant="secondary"
+            className="w-[60%] rounded-full"
+            type="submit"
+          >
+            登 录 / 注 册
+          </Button>
+        </div>
       </form>
     </div>
   )
