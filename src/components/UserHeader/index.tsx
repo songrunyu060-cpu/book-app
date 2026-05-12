@@ -23,7 +23,7 @@ export default function UserHeader() {
           <Link href="/user/recommend">推 荐</Link>
           <Link href="/user/setting">设 置</Link>
         </div>
-        <div className="w-[1px] h-4 bg-white"></div>
+        <div className="w-px h-4 bg-white"></div>
         <div className="flex items-center gap-6">
           <Link href="/user/login">登 录</Link>
           <Link href="/user/register">注 册</Link>
