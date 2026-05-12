@@ -4,7 +4,7 @@ import logoFontImage from "@/public/image/logoFontImage.png"
 
 export default function UserHeader() {
   return (
-    <div className="h-[80px] fixed top-0 left-0 w-full z-10 bg-transparent backdrop-blur-sm flex items-center pr-60">
+    <div className="h-[80px] fixed top-0 left-0 w-full z-10 bg-black/30 backdrop-blur-sm flex items-center pr-60">
       <div className="flex items-center pl-70">
         <Image
           src={logoFontImage}
