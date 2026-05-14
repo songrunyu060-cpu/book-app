@@ -383,7 +383,10 @@ export default function Books() {
           </p>
 
           {/* 首字下沉效果：first-letter */}
-          <p className="text-slate-600 text-lg leading-relaxed first-letter:text-5xl first-letter:font-black first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left">
+          <p
+            className="text-slate-600 text-lg leading-relaxed first-letter:text-5xl 
+          first-letter:font-black first-letter:text-slate-900 first-letter:mr-3 first-letter:float-left"
+          >
             在进入 Next.js 16
             的世界之前，我们必须理解什么是真正的“感知性能”。这不仅仅是
             LCP
