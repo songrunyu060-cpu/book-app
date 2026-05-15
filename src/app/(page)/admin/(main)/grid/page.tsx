@@ -1,3 +1,7 @@
+const GRID_PLACEHOLDER_IDS = [
+  1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12,
+] as const
+
 export default function AdminGrid() {
   return (
     <div className="h-screen w-full grid grid-cols-[280px_1fr] grid-rows-[auto_1fr_auto] overflow-hidden bg-slate-100">
@@ -32,13 +36,13 @@ export default function AdminGrid() {
       <main className="p-6 overflow-y-auto bg-slate-50">
         {/* 你的自适应书架 */}
         <div className="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-4">
-          {Array.from({ length: 12 }).map((_, i) => (
+          {GRID_PLACEHOLDER_IDS.map((id) => (
             <div
-              key={`book-${i}`}
+              key={id}
               className="group aspect-3/4 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
               <div className="h-full w-full bg-linear-to-br from-slate-100 to-slate-50 flex items-center justify-center text-slate-300 font-bold">
-                BOOK {i + 1}
+                BOOK {id}
               </div>
             </div>
           ))}
