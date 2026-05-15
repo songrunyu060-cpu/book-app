@@ -1,10 +1,10 @@
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
-import {
-  normalizePhone,
-  isCnMobile,
-} from "@/lib/auth/phone"
 import { verifyOtp } from "@/lib/auth/otp-store"
+import {
+  isCnMobile,
+  normalizePhone,
+} from "@/lib/auth/phone"
 
 /**
  * 约定：src/auth.ts 作为 Auth.js 配置入口。
@@ -21,10 +21,11 @@ export const { handlers, auth, signIn, signOut } = NextAuth(
           phone: { label: "Phone", type: "text" },
           code: { label: "Code", type: "text" },
         },
-        async authorize(credentials: {
-          phone: string
-          code: string
-        }) {
+        async authorize(
+          credentials:
+            | Record<"phone" | "code", string>
+            | undefined
+        ) {
           const phone = normalizePhone(
             String(credentials?.phone ?? "")
           )
