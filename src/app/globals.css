@@ -167,3 +167,86 @@ a {
     @apply font-sans;
   }
 }
+
+/* 用户首页动效（在组件中用 motion-safe: 引用，尊重 prefers-reduced-motion） */
+@keyframes home-ken-burns {
+  0% {
+    transform: scale(1.06) translate(1%, 0);
+  }
+  100% {
+    transform: scale(1.14) translate(-1.5%, -0.8%);
+  }
+}
+
+@keyframes home-carousel-aura {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 1px rgb(255 255 255 / 0.1),
+      0 25px 50px -12px rgb(0 0 0 / 0.5);
+  }
+  35% {
+    box-shadow:
+      0 0 0 1px rgb(167 139 250 / 0.45),
+      0 28px 60px -10px rgb(99 102 241 / 0.35),
+      0 0 80px -20px rgb(251 191 36 / 0.2);
+  }
+  70% {
+    box-shadow:
+      0 0 0 1px rgb(34 211 238 / 0.4),
+      0 28px 60px -10px rgb(14 165 233 / 0.25),
+      0 0 70px -18px rgb(244 114 182 / 0.18);
+  }
+}
+
+@keyframes home-shine-sweep {
+  0% {
+    transform: translateX(-130%) skewX(-15deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateX(180%) skewX(-15deg);
+    opacity: 0;
+  }
+}
+
+@keyframes home-float-soft {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes home-border-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 200% 50%;
+  }
+}
+
+@keyframes home-news-blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.38;
+  }
+  33% {
+    transform: translate(-14px, 10px) scale(1.12);
+    opacity: 0.58;
+  }
+  66% {
+    transform: translate(10px, -8px) scale(0.92);
+    opacity: 0.45;
+  }
+}

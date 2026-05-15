@@ -1,4 +1,4 @@
-import type { SmsSender, SendSmsResult } from "./types"
+import type { SendSmsResult, SmsSender } from "./types"
 
 // 开发环境模拟短信发送
 export class MockSmsSender implements SmsSender {

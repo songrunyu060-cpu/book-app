@@ -1,9 +1,9 @@
 "use client"
 import Image from "next/image"
 import Link from "next/link"
-import logoFontImage from "@/public/image/logoFontImage.png"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
+import logoFontImage from "@/public/image/logoFontImage.png"
 
 export default function UserHeader() {
   const pathname = usePathname()
@@ -17,8 +17,8 @@ export default function UserHeader() {
     { name: "设 置", href: "/user/setting" },
   ]
   return (
-    <div className="h-[80px] fixed top-0 left-0 w-full z-10 bg-black/30 backdrop-blur-sm">
-      <div className="max-w-7xl mx-auto h-full flex items-center justify-between px-6">
+    <div className="fixed top-0 left-0 z-10 h-[80px] w-full bg-black/30 backdrop-blur-sm">
+      <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-6">
         <Link
           href="/user/home"
           className="flex items-center"
@@ -33,7 +33,7 @@ export default function UserHeader() {
           />
         </Link>
         <nav className="flex items-center gap-8">
-          <div className="flex items-center gap-8 text-sm font-medium">
+          <div className="flex items-center gap-8 font-medium text-sm">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -41,7 +41,7 @@ export default function UserHeader() {
                 className={cn(
                   "transition-all hover:text-white",
                   pathname === link.href
-                    ? "text-white scale-110"
+                    ? "scale-110 text-white"
                     : "text-white/70"
                 )}
               >
@@ -49,37 +49,22 @@ export default function UserHeader() {
               </Link>
             ))}
           </div>
-          <div className="w-px h-4 bg-white/20"></div>
+          <div className="h-4 w-px bg-white/20"></div>
           <div className="flex items-center gap-6 text-sm">
             <Link
               href="/user/login"
-              className="text-white/70 hover:text-white transition-colors"
+              className="text-white/70 transition-colors hover:text-white"
             >
               登 录
             </Link>
             <Link
               href="/user/register"
-              className="px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full border border-white/20 transition-all text-white"
+              className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition-all hover:bg-white/20"
             >
               注 册
             </Link>
           </div>
         </nav>
-        {/* // <div className="flex items-center gap-4 text-white/90 mt-[4px] ml-auto">
-        //   <div className="flex items-center gap-6">
-        //     <Link href="/user/home">首 页</Link>
-        //     <Link href="/user/books">图 书</Link>
-        //     <Link href="/user/collect">收 藏</Link>
-        //     <Link href="/user/borrow">借 阅</Link>
-        //     <Link href="/user/recommend">推 荐</Link>
-        //     <Link href="/user/setting">设 置</Link>
-        //   </div>
-        //   <div className="w-px h-4 bg-white"></div>
-        //   <div className="flex items-center gap-6">
-        //     <Link href="/user/login">登 录</Link>
-        //     <Link href="/user/register">注 册</Link>
-        //   </div>
-        // </div> */}
       </div>
     </div>
   )

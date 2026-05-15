@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "biome check .",
     "lint:fix": "biome check --write .",
+    "sort:classes": "biome check --write --unsafe --only=lint/nursery/useSortedClasses ./src",
     "format": "biome format --write .",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",

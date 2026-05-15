@@ -6,9 +6,9 @@ export default function AuthLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="h-full w-full absolute overflow-hidden">
+    <div className="absolute h-full w-full overflow-hidden">
       <UserHeader />
-      <div className="h-full w-full absolute z-0">
+      <div className="absolute z-0 h-full w-full">
         <video
           src="/video/welcome.mp4"
           autoPlay
@@ -18,7 +18,7 @@ export default function AuthLayout({
         ></video>
       </div>
       {/* 右侧垂直居中容器（共用） */}
-      <div className="min-h-screen w-full flex items-center justify-end px-10 sm:px-10 lg:px-60 relative z-2">
+      <div className="relative z-2 flex min-h-screen w-full items-center justify-end px-10 sm:px-10 lg:px-60">
         <div className="w-full max-w-md">{children}</div>
       </div>
     </div>

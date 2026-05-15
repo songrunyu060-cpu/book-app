@@ -1,7 +1,6 @@
 import {
   bigint,
   bigserial,
-  date,
   index,
   integer,
   pgTable,

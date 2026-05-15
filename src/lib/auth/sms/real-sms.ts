@@ -1,4 +1,4 @@
-import type { SmsSender, SendSmsResult } from "./types"
+import type { SendSmsResult, SmsSender } from "./types"
 
 /**
  * 生产环境在此调用具体厂商 HTTP/SDK。

@@ -59,10 +59,10 @@ export default function LoginPage() {
     void _data
   }
   return (
-    <div className="relative rounded-3xl p-8 sm:p-10 bg-white backdrop-blur-md ring-1 ring-white/25 shadow-[0_24px_70px_rgba(0,0,0,0.35)]">
+    <div className="relative rounded-3xl bg-white p-8 shadow-[0_24px_70px_rgba(0,0,0,0.35)] ring-1 ring-white/25 backdrop-blur-md sm:p-10">
       <div className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-white/10 via-white/5 to-transparent" />
       <div className="relative mb-7">
-        <h2 className="text-xl sm:text-3xl font-semibold tracking-tight mb-4">
+        <h2 className="mb-4 font-semibold text-xl tracking-tight sm:text-3xl">
           密码登录
         </h2>
         <Form {...form}>
@@ -103,7 +103,7 @@ export default function LoginPage() {
                     <Button
                       type="button"
                       variant="secondary"
-                      className="absolute end-1 top-1/2 z-20 -translate-y-1/2 shrink-0 bg-transparent hover:bg-transparent hover:text-blue-500"
+                      className="absolute end-1 top-1/2 z-20 shrink-0 -translate-y-1/2 bg-transparent hover:bg-transparent hover:text-blue-500"
                       disabled={countdown > 0 || !phone}
                       onClick={sendCode}
                     >
@@ -119,7 +119,7 @@ export default function LoginPage() {
 
             {/* 独立按钮提交（重点） */}
             <Button
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white mt-4"
+              className="mt-4 w-full bg-blue-500 text-white hover:bg-blue-600"
               disabled={!isValid || isSubmitting}
               onClick={() =>
                 void form.handleSubmit(onSubmit)()

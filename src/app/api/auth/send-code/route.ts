@@ -1,11 +1,11 @@
 import { NextResponse } from "next/server"
-import { getSmsSender } from "@/lib/auth/sms"
-import {
-  normalizePhone,
-  isCnMobile,
-} from "@/lib/auth/phone"
 import { randomSixDigitCode } from "@/lib/auth/otp"
 import { saveOtp } from "@/lib/auth/otp-store"
+import {
+  isCnMobile,
+  normalizePhone,
+} from "@/lib/auth/phone"
+import { getSmsSender } from "@/lib/auth/sms"
 
 export async function POST(req: Request) {
   const body = (await req.json().catch(() => null)) as {

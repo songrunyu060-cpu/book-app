@@ -4,10 +4,10 @@ const GRID_PLACEHOLDER_IDS = [
 
 export default function AdminGrid() {
   return (
-    <div className="h-screen w-full grid grid-cols-[280px_1fr] grid-rows-[auto_1fr_auto] overflow-hidden bg-slate-100">
+    <div className="grid h-screen w-full grid-cols-[280px_1fr] grid-rows-[auto_1fr_auto] overflow-hidden bg-slate-100">
       {/* 1. 左侧导航 - 跨越全行 */}
-      <aside className="row-span-full bg-slate-900 text-white p-6 shadow-xl z-20">
-        <div className="text-xl font-black mb-8 tracking-tighter">
+      <aside className="z-20 row-span-full bg-slate-900 p-6 text-white shadow-xl">
+        <div className="mb-8 font-black text-xl tracking-tighter">
           LIBRARY OS
         </div>
         <nav className="space-y-2">
@@ -15,7 +15,7 @@ export default function AdminGrid() {
             (item) => (
               <div
                 key={item}
-                className="px-4 py-3 rounded-xl hover:bg-white/10 cursor-pointer transition-colors text-slate-300 hover:text-white text-sm"
+                className="cursor-pointer rounded-xl px-4 py-3 text-slate-300 text-sm transition-colors hover:bg-white/10 hover:text-white"
               >
                 {item}
               </div>
@@ -25,23 +25,23 @@ export default function AdminGrid() {
       </aside>
 
       {/* 2. 顶部 Header - 位于第1行、第2列 */}
-      <header className="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-between z-10">
+      <header className="z-10 flex h-16 items-center justify-between border-slate-200 border-b bg-white px-8">
         <div className="font-bold text-slate-800">
           全部图书
         </div>
-        <div className="w-8 h-8 bg-indigo-100 rounded-full border border-indigo-200" />
+        <div className="h-8 w-8 rounded-full border border-indigo-200 bg-indigo-100" />
       </header>
 
       {/* 3. 主体内容 - 位于第2行、第2列 - 开启独立滚动 */}
-      <main className="p-6 overflow-y-auto bg-slate-50">
+      <main className="overflow-y-auto bg-slate-50 p-6">
         {/* 你的自适应书架 */}
         <div className="grid grid-cols-[repeat(auto-fill,minmax(min(200px,100%),1fr))] gap-4">
           {GRID_PLACEHOLDER_IDS.map((id) => (
             <div
               key={id}
-              className="group aspect-3/4 bg-white rounded-2xl border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+              className="group aspect-3/4 overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
-              <div className="h-full w-full bg-linear-to-br from-slate-100 to-slate-50 flex items-center justify-center text-slate-300 font-bold">
+              <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-slate-100 to-slate-50 font-bold text-slate-300">
                 BOOK {id}
               </div>
             </div>
@@ -50,7 +50,7 @@ export default function AdminGrid() {
       </main>
 
       {/* 4. 底部 Footer - 位于第3行、第2列 */}
-      <footer className="h-12 bg-white border-t border-slate-200 px-8 flex items-center text-xs text-slate-400 italic">
+      <footer className="flex h-12 items-center border-slate-200 border-t bg-white px-8 text-slate-400 text-xs italic">
         © 2026 Library Management System - Powered by
         Next.js 16 & Tailwind 4.0
       </footer>

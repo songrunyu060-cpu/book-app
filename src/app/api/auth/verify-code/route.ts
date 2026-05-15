@@ -1,9 +1,9 @@
 import { NextResponse } from "next/server"
-import {
-  normalizePhone,
-  isCnMobile,
-} from "@/lib/auth/phone"
 import { verifyOtp } from "@/lib/auth/otp-store"
+import {
+  isCnMobile,
+  normalizePhone,
+} from "@/lib/auth/phone"
 
 export async function POST(req: Request) {
   const body = (await req.json().catch(() => null)) as {
