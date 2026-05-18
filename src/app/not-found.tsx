@@ -3,11 +3,11 @@ import Link from "next/link"
 // 纯服务端组件，无客户端代码
 export default function NotFound() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 p-6 text-center">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-linear-to-br from-blue-50 via-purple-50 to-pink-50 p-6 text-center">
       <div className="w-full max-w-xl">
         {/* 卡通 404 标题 */}
         <div className="relative">
-          <h1 className="animate-bounce bg-gradient-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text font-black text-[120px] text-transparent drop-shadow-lg">
+          <h1 className="animate-bounce bg-linear-to-r from-pink-400 via-purple-400 to-blue-400 bg-clip-text font-black text-[120px] text-transparent drop-shadow-lg">
             404
           </h1>
           <div className="absolute top-10 -right-6 rotate-12">
