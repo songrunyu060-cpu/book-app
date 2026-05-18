@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
+import { auth } from "@/auth"
+import { AuthSessionProvider } from "@/components/providers/session-provider"
 import { cn } from "@/lib/utils"
 
 const inter = Inter({
@@ -28,11 +30,13 @@ export const metadata: Metadata = {
   description: "Book Search App",
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
+  const session = await auth()
+
   return (
     <html
       lang="zh-CN"
@@ -62,7 +66,9 @@ export default function RootLayout({
         `}</Script>
       </head>
       <body className="flex min-h-full flex-col">
-        {children}
+        <AuthSessionProvider session={session}>
+          {children}
+        </AuthSessionProvider>
       </body>
     </html>
   )

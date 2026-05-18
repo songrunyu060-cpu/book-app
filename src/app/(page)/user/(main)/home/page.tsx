@@ -1149,7 +1149,7 @@ function CategoryRankCard({
               >
                 {idx + 1}
               </span>
-              <div className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md shadow-md ring-2 ring-white/80 transition-all duration-300 group-hover/cardcat:ring-violet-400/50 motion-safe:group-hover/cardcat:scale-105 dark:ring-white/10 sm:h-[4.5rem] sm:w-11">
+              <div className="relative h-14 w-10 shrink-0 overflow-hidden rounded-md shadow-md ring-2 ring-white/80 transition-all duration-300 group-hover/cardcat:ring-violet-400/50 motion-safe:group-hover/cardcat:scale-105 dark:ring-white/10 sm:h-18 sm:w-11">
                 <Image
                   src={coverUrl}
                   alt={book.title}
@@ -1539,7 +1539,7 @@ export default function HomePage() {
                   >
                     {b.rank}
                   </span>
-                  <div className="relative h-[4.25rem] w-[3.1rem] shrink-0 overflow-hidden rounded-lg shadow-md ring-2 ring-white/90 transition-all duration-300 motion-safe:group-hover/poprow:scale-105 motion-safe:group-hover/poprow:shadow-xl motion-safe:group-hover/poprow:shadow-amber-500/25 motion-safe:group-hover/poprow:ring-amber-400/40 dark:ring-white/10 sm:h-[4.5rem] sm:w-[3.35rem]">
+                  <div className="relative h-17 w-[3.1rem] shrink-0 overflow-hidden rounded-lg shadow-md ring-2 ring-white/90 transition-all duration-300 motion-safe:group-hover/poprow:scale-105 motion-safe:group-hover/poprow:shadow-xl motion-safe:group-hover/poprow:shadow-amber-500/25 motion-safe:group-hover/poprow:ring-amber-400/40 dark:ring-white/10 sm:h-[4.5rem] sm:w-[3.35rem]">
                     <Image
                       src={b.cover}
                       alt={b.title}
@@ -1571,20 +1571,20 @@ export default function HomePage() {
         >
           <CardHeader className="pt-4 relative shrink-0 overflow-hidden border-b border-emerald-300/40 pb-4 dark:border-emerald-500/35">
             <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-br from-emerald-500/18 via-teal-400/12 to-cyan-400/10 dark:from-emerald-600/25 dark:via-teal-600/18 dark:to-cyan-600/12"
+              className="pointer-events-none absolute inset-0 bg-linear-to-br from-emerald-500/18 via-teal-400/12 to-cyan-400/10 dark:from-emerald-600/25 dark:via-teal-600/18 dark:to-cyan-600/12"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute -top-12 -right-8 size-40 rounded-full bg-gradient-to-br from-teal-400/35 via-emerald-300/28 to-cyan-300/25 blur-3xl motion-safe:animate-[home-news-blob_10s_ease-in-out_infinite_reverse]"
+              className="pointer-events-none absolute -top-12 -right-8 size-40 rounded-full bg-linear-to-br from-teal-400/35 via-emerald-300/28 to-cyan-300/25 blur-3xl motion-safe:animate-[home-news-blob_10s_ease-in-out_infinite_reverse]"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute -bottom-6 left-0 size-28 rounded-full bg-gradient-to-tr from-emerald-300/28 to-sky-300/22 blur-2xl motion-safe:animate-[home-news-blob_12s_ease-in-out_infinite]"
+              className="pointer-events-none absolute -bottom-6 left-0 size-28 rounded-full bg-linear-to-tr from-emerald-300/28 to-sky-300/22 blur-2xl motion-safe:animate-[home-news-blob_12s_ease-in-out_infinite]"
               aria-hidden
             />
             <div className="relative z-10 flex gap-3 sm:gap-3.5">
               <div
-                className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/30 ring-2 ring-white/45 dark:ring-white/15 motion-safe:animate-[home-float-soft_2.8s_ease-in-out_infinite]"
+                className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-linear-to-br from-emerald-500 to-teal-600 text-white shadow-lg shadow-emerald-500/30 ring-2 ring-white/45 dark:ring-white/15 motion-safe:animate-[home-float-soft_2.8s_ease-in-out_infinite]"
                 aria-hidden
               >
                 <Users className="size-5 motion-safe:animate-pulse" />
@@ -1593,7 +1593,7 @@ export default function HomePage() {
                 <div className="flex min-w-0 flex-wrap items-center gap-x-2 gap-y-1">
                   <CardTitle
                     className={cn(
-                      "min-w-0 bg-linear-to-r from-emerald-950 via-teal-700 to-cyan-700 bg-[length:220%_auto] bg-clip-text font-semibold text-base text-transparent dark:from-emerald-100 dark:via-teal-200 dark:to-cyan-100",
+                      "min-w-0 bg-linear-to-r from-emerald-950 via-teal-700 to-cyan-700 bg-size-[220%_auto] bg-clip-text font-semibold text-base text-transparent dark:from-emerald-100 dark:via-teal-200 dark:to-cyan-100",
                       "motion-safe:animate-[home-border-shimmer_8s_linear_infinite]"
                     )}
                   >
@@ -1623,14 +1623,14 @@ export default function HomePage() {
                   className={cn(
                     "group/userrow cursor-pointer motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-2 flex min-h-0 grow items-center gap-3 rounded-xl border border-transparent bg-muted/15 px-2 py-2.5 duration-500 sm:gap-3.5 sm:px-3 sm:py-3",
                     "motion-safe:transition-all motion-safe:duration-300 motion-safe:hover:-translate-y-0.5 motion-safe:hover:shadow-lg motion-safe:hover:shadow-emerald-500/20 motion-safe:hover:ring-1 motion-safe:hover:ring-emerald-400/25",
-                    "hover:border-emerald-300/35 hover:bg-emerald-500/[0.05] dark:hover:border-emerald-500/25 dark:hover:bg-emerald-950/25"
+                    "hover:border-emerald-300/35 hover:bg-emerald-500/5 dark:hover:border-emerald-500/25 dark:hover:bg-emerald-950/25"
                   )}
                 >
                   <span
                     className={cn(
                       "flex size-8 shrink-0 items-center justify-center rounded-lg font-bold text-sm tabular-nums transition-transform duration-300 group-hover/userrow:scale-110",
                       u.rank <= 3
-                        ? "bg-gradient-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/35 motion-safe:animate-pulse"
+                        ? "bg-linear-to-br from-emerald-500 to-teal-600 text-white shadow-md shadow-emerald-500/35 motion-safe:animate-pulse"
                         : "bg-muted text-muted-foreground"
                     )}
                   >
@@ -1687,7 +1687,7 @@ export default function HomePage() {
       <section aria-labelledby="news-heading">
         <Card
           size="sm"
-          className="py-0 pb-6 cursor-pointer motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:zoom-in-95 motion-safe:duration-700 motion-safe:delay-100 motion-safe:hover:-translate-y-0.5 motion-safe:transition-transform motion-safe:duration-300 motion-safe:hover:shadow-lg"
+          className="py-0 pb-6 cursor-pointer motion-safe:animate-in motion-safe:fade-in motion-safe:slide-in-from-bottom-4 motion-safe:zoom-in-95 motion-safe:duration-700 motion-safe:delay-100 motion-safe:hover:-translate-y-0.5 motion-safe:transition-transform motion-safe:hover:shadow-lg"
         >
           <CardHeader className="relative overflow-hidden border-b border-indigo-300/30 p-4 dark:border-indigo-500/25">
             <div
