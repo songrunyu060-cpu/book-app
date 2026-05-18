@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Geist, Geist_Mono, Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
-import { auth } from "@/auth"
 import { AuthSessionProvider } from "@/components/providers/session-provider"
 import { cn } from "@/lib/utils"
 
@@ -35,8 +34,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const session = await auth()
-
   return (
     <html
       lang="zh-CN"
@@ -66,7 +63,7 @@ export default async function RootLayout({
         `}</Script>
       </head>
       <body className="flex min-h-full flex-col">
-        <AuthSessionProvider session={session}>
+        <AuthSessionProvider>
           {children}
         </AuthSessionProvider>
       </body>

@@ -4,9 +4,12 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import logoFontImage from "@/public/image/logoFontImage.png"
+import { signOut, useSession } from "next-auth/react"
+import { Button } from "../ui/button"
 
 export default function UserHeader() {
   const pathname = usePathname()
+  const { data: session, status } = useSession()
 
   const navLinks = [
     { name: "首 页", href: "/user/home" },
@@ -50,6 +53,7 @@ export default function UserHeader() {
             ))}
           </div>
           <div className="h-4 w-px bg-white/20"></div>
+          {status === "loading" ? null : !session ? (
           <div className="flex items-center gap-6 text-sm">
             <Link
               href="/user/login"
@@ -57,13 +61,17 @@ export default function UserHeader() {
             >
               登 录
             </Link>
-            <Link
-              href="/user/register"
-              className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-white transition-all hover:bg-white/20"
-            >
-              注 册
-            </Link>
           </div>
+          ) : (
+          <div className="flex items-center gap-6 text-sm">
+            <Button
+              variant="outline"
+              onClick={() => signOut({ redirect: true, callbackUrl: "/user/login" })}
+            >
+              退出登录
+            </Button>
+          </div>
+          )}
         </nav>
       </div>
     </div>

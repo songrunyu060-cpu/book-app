@@ -1,5 +1,6 @@
 "use server"
 
+import { redirect } from "next/navigation"
 import { signIn } from "@/auth"
 
 export type LoginWithPhoneOtpInput = {
@@ -55,7 +56,7 @@ export async function loginWithPhoneOtp(
       }
     }
 
-    return { ok: true }
+    redirect("/user/home")
   } catch (error: unknown) {
     const message = loginFailureMessage(error)
     if (message) {
