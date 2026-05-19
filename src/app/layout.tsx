@@ -1,25 +1,9 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Inter } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { auth } from "@/auth"
 import { AuthSessionProvider } from "@/components/providers/session-provider"
 import { cn } from "@/lib/utils"
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
-})
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-})
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-})
 
 /**
  * 用于设置页面标题和描述
@@ -43,10 +27,7 @@ export default async function RootLayout({
       className={cn(
         "h-full",
         "antialiased",
-        geistSans.variable,
-        geistMono.variable,
         "font-sans",
-        inter.variable
       )}
       suppressHydrationWarning
     >
