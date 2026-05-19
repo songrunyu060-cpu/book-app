@@ -4,26 +4,13 @@ type OtpRecord = {
   attempts: number
 }
 
-const OTP_STORE_KEY = "__book_app_otp_store__" as const
-
-type OtpStoreGlobal = typeof globalThis & {
-  [OTP_STORE_KEY]?: Map<string, OtpRecord>
-}
-
-/** 跨 Route Handler / Server Action 共享同一份内存（dev 与单实例） */
-function getStore(): Map<string, OtpRecord> {
-  const g = globalThis as OtpStoreGlobal
-  if (!g[OTP_STORE_KEY]) {
-    g[OTP_STORE_KEY] = new Map()
-  }
-  return g[OTP_STORE_KEY]
-}
+const store = new Map<string, OtpRecord>()
 
 const TTL_MS = 5 * 60 * 1000
 const MAX_ATTEMPTS = 5
 
 export function saveOtp(phone: string, code: string) {
-  getStore().set(phone, {
+  store.set(phone, {
     code,
     expireAt: Date.now() + TTL_MS,
     attempts: 0,
@@ -34,7 +21,6 @@ export function verifyOtp(
   phone: string,
   code: string
 ): "ok" | "bad" | "expired" {
-  const store = getStore()
   const row = store.get(phone)
   if (!row) return "bad"
 

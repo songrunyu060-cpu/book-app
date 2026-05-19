@@ -1,6 +1,7 @@
 "use client"
 
 import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation"
 import { useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
@@ -31,6 +32,7 @@ type LoginFormValues = z.infer<typeof loginFormSchema>
 
 // 登录页（只保留核心内容）
 export default function LoginPage() {
+  const router = useRouter()
   const [countdown, setCountdown] = useState(0)
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
@@ -84,9 +86,13 @@ export default function LoginPage() {
       code: data.code,
     })
 
-    if (!result.ok) {
-      form.setError("root", { message: result.message })
+    if (result.ok) {
+      router.push("/user/home")
+      router.refresh()
+      return
     }
+
+    form.setError("root", { message: result.message })
   }
   return (
     <div className="relative rounded-3xl bg-white p-8 shadow-[0_24px_70px_rgba(0,0,0,0.35)] ring-1 ring-white/25 backdrop-blur-md sm:p-10">

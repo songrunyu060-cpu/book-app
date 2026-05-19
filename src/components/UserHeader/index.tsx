@@ -9,7 +9,7 @@ import { Button } from "../ui/button"
 
 export default function UserHeader() {
   const pathname = usePathname()
-  const { data: session, status } = useSession()
+  const { data: session } = useSession()
 
   const navLinks = [
     { name: "首 页", href: "/user/home" },
@@ -53,24 +53,29 @@ export default function UserHeader() {
             ))}
           </div>
           <div className="h-4 w-px bg-white/20"></div>
-          {status === "loading" ? null : !session ? (
-          <div className="flex items-center gap-6 text-sm">
-            <Link
-              href="/user/login"
-              className="text-white/70 transition-colors hover:text-white"
-            >
-              登 录
-            </Link>
-          </div>
+          {!session ? (
+            <div className="flex items-center gap-6 text-sm">
+              <Link
+                href="/user/login"
+                className="text-white/70 transition-colors hover:text-white"
+              >
+                登 录
+              </Link>
+            </div>
           ) : (
-          <div className="flex items-center gap-6 text-sm">
-            <Button
-              variant="outline"
-              onClick={() => signOut({ redirect: true, callbackUrl: "/user/login" })}
-            >
-              退出登录
-            </Button>
-          </div>
+            <div className="flex items-center gap-6 text-sm">
+              <Button
+                variant="outline"
+                onClick={() =>
+                  signOut({
+                    redirect: true,
+                    callbackUrl: "/user/login",
+                  })
+                }
+              >
+                退出登录
+              </Button>
+            </div>
           )}
         </nav>
       </div>
