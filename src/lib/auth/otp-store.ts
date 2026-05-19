@@ -4,13 +4,21 @@ type OtpRecord = {
   attempts: number
 }
 
-const store = new Map<string, OtpRecord>()
+const OTP_STORE_KEY = "__book_app_otp_store__" as const
+
+function getStore(): Map<string, OtpRecord> {
+  const g = globalThis as typeof globalThis & {
+    [OTP_STORE_KEY]?: Map<string, OtpRecord>
+  }
+  if (!g[OTP_STORE_KEY]) g[OTP_STORE_KEY] = new Map()
+  return g[OTP_STORE_KEY]
+}
 
 const TTL_MS = 5 * 60 * 1000
 const MAX_ATTEMPTS = 5
 
 export function saveOtp(phone: string, code: string) {
-  store.set(phone, {
+  getStore().set(phone, {
     code,
     expireAt: Date.now() + TTL_MS,
     attempts: 0,
@@ -21,25 +29,25 @@ export function verifyOtp(
   phone: string,
   code: string
 ): "ok" | "bad" | "expired" {
-  const row = store.get(phone)
+  const row = getStore().get(phone)
   if (!row) return "bad"
 
   if (Date.now() > row.expireAt) {
-    store.delete(phone)
+    getStore().delete(phone)
     return "expired"
   }
 
   if (row.attempts >= MAX_ATTEMPTS) {
-    store.delete(phone)
+    getStore().delete(phone)
     return "bad"
   }
 
   if (row.code !== code) {
     row.attempts += 1
-    store.set(phone, row)
+    getStore().set(phone, row)
     return "bad"
   }
 
-  store.delete(phone)
+  getStore().delete(phone)
   return "ok"
 }

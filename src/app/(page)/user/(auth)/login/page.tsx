@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { loginWithPhoneOtp } from "./actions"
+import { useSession } from "next-auth/react"
 
 const loginFormSchema = z.object({
   phone: z
@@ -33,6 +34,7 @@ type LoginFormValues = z.infer<typeof loginFormSchema>
 // 登录页（只保留核心内容）
 export default function LoginPage() {
   const router = useRouter()
+  const { update } = useSession()
   const [countdown, setCountdown] = useState(0)
   const form = useForm<LoginFormValues>({
     resolver: zodResolver(loginFormSchema),
@@ -80,15 +82,14 @@ export default function LoginPage() {
 
   const onSubmit = async (data: LoginFormValues) => {
     form.clearErrors("root")
-
     const result = await loginWithPhoneOtp({
       phone: data.phone,
       code: data.code,
     })
 
     if (result.ok) {
+      await update()
       router.push("/user/home")
-      router.refresh()
       return
     }
 

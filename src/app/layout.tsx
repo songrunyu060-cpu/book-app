@@ -24,11 +24,7 @@ export default async function RootLayout({
   return (
     <html
       lang="zh-CN"
-      className={cn(
-        "h-full",
-        "antialiased",
-        "font-sans",
-      )}
+      className={cn("h-full", "antialiased", "font-sans")}
       suppressHydrationWarning
     >
       <head>

@@ -8,6 +8,6 @@ export default function Borrow() {
   if (!session) {
     redirect("/user/login")
   }
-  
+
   return <div>Borrow</div>
 }

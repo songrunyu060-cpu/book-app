@@ -28,9 +28,7 @@ export default function Books() {
         <div className="mb-4 flex h-20 w-20 items-center justify-center rounded-full bg-gray-200 text-2xl">
           Z
         </div>
-        <div className="mb-2 font-bold text-xl">
-          周宇
-        </div>
+        <div className="mb-2 font-bold text-xl">周宇</div>
         <div className="line-clamp-3 text-gray-500 text-xs">
           是一个老六，，喜欢看小说，喜欢看小说，，喜欢看小说，，喜欢看小说，，喜欢看小说，喜欢看小说，喜欢看小说，
         </div>
