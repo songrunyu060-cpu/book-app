@@ -10,8 +10,8 @@ import { cn } from "@/lib/utils"
  * @type {Metadata}
  */
 export const metadata: Metadata = {
-  title: "Book Search App",
-  description: "Book Search App",
+  title: "西瓜书屋",
+  description: "西瓜书屋，一个免费的图书搜索平台",
 }
 
 export default async function RootLayout({

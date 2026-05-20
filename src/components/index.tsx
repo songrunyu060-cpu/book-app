@@ -1,3 +1,4 @@
 import UserHeader from "./UserHeader"
+import BackTop from "./BackTop" 
 
-export { UserHeader }
+export { UserHeader, BackTop }

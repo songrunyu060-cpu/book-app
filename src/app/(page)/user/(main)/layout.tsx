@@ -1,4 +1,4 @@
-import { UserHeader } from "@/components"
+import { BackTop, UserHeader } from "@/components"
 
 export default function UserLayout({
   children,
@@ -8,6 +8,7 @@ export default function UserLayout({
   return (
     <div className="min-h-screen">
       <UserHeader />
+      <BackTop />
       <main className="mx-auto w-full max-w-6xl px-4 pt-[80px] pb-8 sm:px-6 lg:px-8">
         {children}
       </main>
