@@ -41,6 +41,7 @@ export async function POST(req: Request) {
   }
 
   const isDev =
+    process.env.NODE_ENV === "development" ||
     process.env.NEXT_PUBLIC_APP_ENV === "development"
   const exposeDebug =
     isDev && process.env.SMS_EXPOSE_DEBUG_CODE === "true"
