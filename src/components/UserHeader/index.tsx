@@ -1,10 +1,11 @@
 "use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
+import { signOut, useSession } from "next-auth/react"
 import { cn } from "@/lib/utils"
 import logoFontImage from "@/public/image/logoFontImage.png"
-import { signOut, useSession } from "next-auth/react"
 import { Button } from "../ui/button"
 
 export default function UserHeader() {
@@ -77,7 +78,7 @@ export default function UserHeader() {
               </Button>
               <Link
                 href="/user/profile"
-                className="text-white/70 transition-colors hover:text-white"  
+                className="text-white/70 transition-colors hover:text-white"
               >
                 {session.user?.phone}
               </Link>
